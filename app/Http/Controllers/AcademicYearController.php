@@ -27,6 +27,10 @@ class AcademicYearController extends Controller
      */
     public function create(Request $request)
     {
+
+        
+        
+        
 		if( ! $request->ajax()){
 		   return view('backend.administration.academic_year.create');
 		}else{

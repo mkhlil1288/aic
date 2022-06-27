@@ -91,7 +91,7 @@ class ParentController extends Controller
         if ($request->hasFile('image')){
              $image = $request->file('image');
              $ImageName = time().'.'.$image->getClientOriginalExtension();
-             Image::make($image)->resize(200, 160)->save(base_path('uploads/images/parents/') . $ImageName);
+             Image::make($image)->resize(200, 160)->save(public_path('uploads/images/parents/') . $ImageName);
         }
 
         $user = new User();
@@ -199,7 +199,7 @@ class ParentController extends Controller
         if ($request->hasFile('image')){
              $image = $request->file('image');
              $ImageName = time().'.'.$image->getClientOriginalExtension();
-             Image::make($image)->resize(200, 160)->save(base_path('uploads/images/parents/') . $ImageName);
+             Image::make($image)->resize(200, 160)->save(public_path('uploads/images/parents/') . $ImageName);
              $user->image = 'parents/'.$ImageName;
         }
         $user->save();

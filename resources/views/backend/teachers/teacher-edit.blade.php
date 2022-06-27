@@ -10,7 +10,7 @@
 			</div>
 			<div class="panel-body">
 			  <div class="col-md-8">
-				<form action="{{route('teachers.update',$teacher->id)}}" autocomplete="off" class="form-horizontal validate" autocomplete="off" method="post" accept-charset="utf-8">
+				<form action="{{route('teachers.update',$teacher->id)}}" autocomplete="off" class="form-horizontal validate" enctype="multipart/form-data" autocomplete="off" method="post" accept-charset="utf-8">
 					@csrf
 					{{ method_field('PATCH') }}
 					<div class="form-group">

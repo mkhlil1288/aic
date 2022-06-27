@@ -55,14 +55,14 @@ class TeacherController extends Controller
             'joining_date' => 'required',
             'email' => 'required|string|email|max:191|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            'image' => 'nullable|image|max:5120',
+            'image' => 'nullable|max:5120',
         ]);
 
         $ImageName='profile.png';
         if ($request->hasFile('image')){
-             $image = $request->file('image');
+             $image = $request->file('image');  
              $ImageName = time().'.'.$image->getClientOriginalExtension();
-             Image::make($image)->resize(400, 400)->save(base_path('uploads/images/teachers/') . $ImageName);
+             Image::make($image)->resize(400, 400)->save(public_path('uploads/images/teachers/') . $ImageName);
         }
 
         $user = new User();
@@ -143,7 +143,7 @@ class TeacherController extends Controller
                 Rule::unique('users')->ignore($teacher->user_id),
             ],
             'password' => 'nullable|min:6|confirmed',
-            'image' => 'nullable|image|max:5120',
+			'image' => 'nullable|max:5120',
         ]);
 
         $teacher->name = $request->name;
@@ -163,10 +163,11 @@ class TeacherController extends Controller
         if($request->password){
             $user->password = Hash::make($request->password);
         }
+        
         if ($request->hasFile('image')){
              $image = $request->file('image');
              $ImageName = time().'.'.$image->getClientOriginalExtension();
-             Image::make($image)->resize(400, 400)->save(base_path('uploads/images/teachers/') . $ImageName);
+             Image::make($image)->resize(400, 400)->save(public_path('uploads/images/teachers/') . $ImageName);
              $user->image = 'teachers/'.$ImageName;
         }
         $user->save();

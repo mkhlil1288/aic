@@ -328,7 +328,7 @@
 		@endif
 	</ul>
  </li>
- <li>   
+ {{-- <li>   
 	<a href="#"><i class="fa fa-building-o"></i>{{ _lang('Hostel') }}</a>
 	<ul>
 	   @if (has_permission('hostels.index',Auth::User()->role_id))
@@ -356,7 +356,7 @@
 		</li>
 		@endif
 	</ul>
- </li>
+ </li> --}}
  
  <li>   
 	<a href="#"><i class="fa fa-newspaper-o"></i>{{ _lang('Examinations') }}</a>

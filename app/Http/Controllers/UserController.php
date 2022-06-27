@@ -68,7 +68,7 @@ class UserController extends Controller
         if ($request->hasFile('image')){
            $image = $request->file('image');
            $ImageName = time().'.'.$image->getClientOriginalExtension();
-           Image::make($image)->resize(400, 400)->save(base_path('uploads/images/users/') . $ImageName);
+           Image::make($image)->resize(400, 400)->save(public_path('uploads/images/users/') . $ImageName);
         }
 
        $user = new User();
@@ -146,7 +146,7 @@ class UserController extends Controller
         if ($request->hasFile('image')){
            $image = $request->file('image');
            $ImageName = time().'.'.$image->getClientOriginalExtension();
-           Image::make($image)->resize(400, 400)->save(base_path('uploads/images/users/') . $ImageName);
+           Image::make($image)->resize(400, 400)->save(public_path('uploads/images/users/') . $ImageName);
            $user->image = 'users/'.$ImageName;
        }
 	   $user->facebook = $request->facebook =="" ? "#" : $request->facebook;

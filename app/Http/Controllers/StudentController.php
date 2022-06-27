@@ -93,7 +93,7 @@ class StudentController extends Controller
         if ($request->hasFile('image')){
              $image = $request->file('image');
              $ImageName = time().'.'.$image->getClientOriginalExtension();
-             Image::make($image)->resize(200, 160)->save(base_path('uploads/images/students/') . $ImageName);
+             Image::make($image)->resize(200, 160)->save(public_path('uploads/images/students/') . $ImageName);
         }
         
 			//Create User
@@ -257,7 +257,7 @@ class StudentController extends Controller
         if ($request->hasFile('image')){
              $image = $request->file('image');
              $ImageName = time().'.'.$image->getClientOriginalExtension();
-             Image::make($image)->resize(200, 160)->save(base_path('uploads/images/students/') . $ImageName);
+             Image::make($image)->resize(200, 160)->save(public_path('uploads/images/students/') . $ImageName);
              $user->image = 'students/'.$ImageName;
         }
 		

@@ -250,7 +250,7 @@
 			</li>
 		</ul>
 	 </li>
-	 <li>   
+	 {{-- <li>   
 		<a href="#"><i class="fa fa-building-o"></i>{{ _lang('Hostel') }}</a>
 		<ul>
 		   <li @if((Request::is('hostels'))OR(Request::is('hostels/*'))) class="active" @endif>
@@ -269,7 +269,7 @@
 				</a>
 			</li>
 		</ul>
-	 </li>
+	 </li> --}}
 	 
 	 <li>   
 		<a href="#"><i class="fa fa-newspaper-o"></i>{{ _lang('Examinations') }}</a>

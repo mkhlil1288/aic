@@ -89,7 +89,7 @@
 
 					<div class="form-group">
 						<div class="col-sm-offset-3 col-sm-5">
-							<button type="submit" class="btn btn-info">Update Parent</button>
+							<button type="submit" class="btn btn-info">{{_lang('Update Parent')}}</button>
 						</div>
 					</div>
 				</form>

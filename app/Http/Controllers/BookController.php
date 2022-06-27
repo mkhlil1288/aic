@@ -61,7 +61,7 @@ class BookController extends Controller
         if ($request->hasFile('photo')){
            $image = $request->file('photo');
            $ImageName = time().'.'.$image->getClientOriginalExtension();
-           Image::make($image)->resize(160, 160)->save(base_path('uploads/images/books/') . $ImageName);
+           Image::make($image)->resize(160, 160)->save(public_path('uploads/images/books/') . $ImageName);
            $book->photo = $ImageName;
        }
        $book->save();
@@ -126,7 +126,7 @@ class BookController extends Controller
         if ($request->hasFile('photo')){
            $image = $request->file('photo');
            $ImageName = time().'.'.$image->getClientOriginalExtension();
-           Image::make($image)->resize(160, 160)->save(base_path('uploads/images/books/') . $ImageName);
+           Image::make($image)->resize(160, 160)->save(public_path('uploads/images/books/') . $ImageName);
            $book->photo = $ImageName;
        }
        $book->save();

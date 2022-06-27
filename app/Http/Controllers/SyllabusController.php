@@ -56,7 +56,7 @@ class SyllabusController extends Controller
         if($request->hasFile('file')){
             $file = $request->file('file');
             $file_name = time().'.'.$file->getClientOriginalExtension();
-            $file->move(base_path('uploads/files/syllabus/'),$file_name);
+            $file->move(public_path('uploads/files/syllabus/'),$file_name);
             $syllabus->file = $file_name;
         }
 
@@ -119,7 +119,7 @@ class SyllabusController extends Controller
         if($request->hasFile('file')){
             $file = $request->file('file');
             $file_name = time().'.'.$file->getClientOriginalExtension();
-            $file->move(base_path('uploads/files/syllabus/'),$file_name);
+            $file->move(public_path('uploads/files/syllabus/'),$file_name);
             $syllabus->file = $file_name;
         }
 

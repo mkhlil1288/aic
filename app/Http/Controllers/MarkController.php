@@ -81,7 +81,7 @@ class MarkController extends Controller
 		$marks =[];
 		$mark_destributions =[];
 		$new_fields = [];
-		
+		$mark_details = [];
 		if( $exam != "" && $class_id != "" && $section_id != "" && $subject_id != "" ){
 				$marks = Student::select('*','marks.id as mark_id')
 					   ->leftJoin('marks',function($join) use ($exam, $class_id, $subject_id, $section_id) {
@@ -110,15 +110,14 @@ class MarkController extends Controller
 			WHERE mark_distributions.is_active='yes' and mark_details.mark_id IS NULL", 
 			["class"=>$class_id, "section"=>$section_id, "subject"=>$subject_id, "exam"=>$exam]);
 			
-			
-			$mark_details = [];
-			
+					
 			foreach($existing_marks as $key=>$val){
 				if($val->mark_id != ""){
 				   $mark_details[$val->mark_id][$val->mark_type] = $val;
 				}
 			}
 		}	
+		
 	    return view('backend.marks.mark_register.create',compact('mark_details', 'mark_destributions', 'new_fields', 'marks', 'exam', 'class_id', 'section_id', 'subject_id'));
         
 	}

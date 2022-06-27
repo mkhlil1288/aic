@@ -217,14 +217,14 @@ if ( ! function_exists('get_grade')){
 }
 
 if ( ! function_exists('get_point')){
-	function get_point($mark) 
+	function get_point(int $mark) 
 	{
 		$mark = sql_escape($mark);
 		$grade = DB::select("SELECT point FROM grades WHERE $mark BETWEEN marks_from AND marks_to");
-	    if ( count($grade) >0 ) {
+	    if ( count($grade) > 0 ) {
 		   return $grade[0]->point;
 		}
-		return "N/A";
+		return 0;
 
 	}
 }

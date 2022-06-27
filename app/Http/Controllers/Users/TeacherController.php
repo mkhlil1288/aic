@@ -171,25 +171,25 @@ class TeacherController extends Controller
         if($request->hasFile('file')){
             $file = $request->file('file');
             $file_name = time().rand(1,999).'.'.$file->getClientOriginalExtension();
-            $file->move(base_path('uploads/files/assignments/'),$file_name);
+            $file->move(public_path('uploads/files/assignments/'),$file_name);
             $assignment->file = $file_name;
         }
         if($request->hasFile('file_2')){
             $file = $request->file('file_2');
             $file_name = time().rand(1,999).'.'.$file->getClientOriginalExtension();
-            $file->move(base_path('uploads/files/assignments/'),$file_name);
+            $file->move(public_path('uploads/files/assignments/'),$file_name);
             $assignment->file_2 = $file_name;
         }
         if($request->hasFile('file_3')){
             $file = $request->file('file_3');
             $file_name = time().rand(1,999).'.'.$file->getClientOriginalExtension();
-            $file->move(base_path('uploads/files/assignments/'),$file_name);
+            $file->move(public_path('uploads/files/assignments/'),$file_name);
             $assignment->file_3 = $file_name;
         }
         if($request->hasFile('file_4')){
             $file = $request->file('file_4');
             $file_name = time().rand(1,999).'.'.$file->getClientOriginalExtension();
-            $file->move(base_path('uploads/files/assignments/'),$file_name);
+            $file->move(public_path('uploads/files/assignments/'),$file_name);
             $assignment->file_4 = $file_name;
         }
 
@@ -248,25 +248,25 @@ class TeacherController extends Controller
         if($request->hasFile('file')){
             $file = $request->file('file');
             $file_name = time().rand(1,999).'.'.$file->getClientOriginalExtension();
-            $file->move(base_path('uploads/files/assignments/'),$file_name);
+            $file->move(public_path('uploads/files/assignments/'),$file_name);
             $assignment->file = $file_name;
         }
         if($request->hasFile('file_2')){
             $file = $request->file('file_2');
             $file_name = time().rand(1,999).'.'.$file->getClientOriginalExtension();
-            $file->move(base_path('uploads/files/assignments/'),$file_name);
+            $file->move(public_path('uploads/files/assignments/'),$file_name);
             $assignment->file_2 = $file_name;
         }
         if($request->hasFile('file_3')){
             $file = $request->file('file_3');
             $file_name = time().rand(1,999).'.'.$file->getClientOriginalExtension();
-            $file->move(base_path('uploads/files/assignments/'),$file_name);
+            $file->move(public_path('uploads/files/assignments/'),$file_name);
             $assignment->file_3 = $file_name;
         }
         if($request->hasFile('file_4')){
             $file = $request->file('file_4');
             $file_name = time().rand(1,999).'.'.$file->getClientOriginalExtension();
-            $file->move(base_path('uploads/files/assignments/'),$file_name);
+            $file->move(public_path('uploads/files/assignments/'),$file_name);
             $assignment->file_4 = $file_name;
         }
 

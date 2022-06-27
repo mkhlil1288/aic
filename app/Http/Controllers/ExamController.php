@@ -38,7 +38,7 @@ class ExamController extends Controller
         return view('backend.exam.exam.list',compact('exams'));
     }
 	
-	public function exam_schedule($type='view', Request $request){
+	public function exam_schedule(Request $request, $type='view'){
 		
 		$exam = $request->input('exam');
 		$class = $request->input('class');
